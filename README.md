@@ -34,9 +34,11 @@
 
 * The total loss is computed across all positive pairs (i,j) in the batch. Let z=[z1,z2,...,z2N] include all the augmented examples in the batch, where z1...zN are outputs of the left branch, and zN+1...z2N are outputs of the right branch. Thus, the positive pairs are (zk,zk+N) for ∀k∈[1,N].
 
-* Then, the total loss L is:
+* Then, the total loss L is: $$
+L = \frac{1}{2N} \sum_{k=1}^N [ \; l(k, \;k+N) + l(k+N, \;k)\;]
+$$
 
-L=12N∑k=1N[l(k,k+N)+l(k+N,k)]
+
 
 * NOTE: this equation is slightly different from the one in the paper. We've rearranged the ordering of the positive pairs in the batch, so the indices are different. The rearrangement makes it easier to implement the code in vectorized form.
 
