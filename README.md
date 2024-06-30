@@ -45,7 +45,15 @@ $$
 
 * We'll walk through the steps of implementing the loss function in vectorized form. Implement the functions sim, simclr_loss_naive in resources/simclr/contrastive_loss.py. Test the code by running the sanity checks below.
 
-  ## Finetune a Linear Layer for Classification!
+## Finetune a Linear Layer for Classification!
 * Now it's time to put the representation vectors to the test!
 
 * We remove the projection head from the SimCLR model and slap on a linear layer to finetune for a simple classification task. All layers before the linear layer are frozen, and only the weights in the final linear layer are trained. We compare the performance of the SimCLR + finetuning model against a baseline model, where no self-supervised learning is done beforehand, and all weights in the model are trained. You will get to see for yourself the power of self-supervised learning and how the learned representation vectors improve downstream task performance.
+
+
+## Baseline: Without Self-Supervised Learning
+First, we take a look at the baseline model. We'll remove the projection head from the SimCLR model and slap on a linear layer to finetune for a simple classification task. No self-supervised learning is done beforehand, and all weights in the model are trained.
+
+
+## With Self-Supervised Learning
+See how much improvement we get with self-supervised learning.We pretrain the SimCLR model using the simclr loss we wrote, remove the projection head from the SimCLR model, and use a linear layer to finetune for a simple classification task.
