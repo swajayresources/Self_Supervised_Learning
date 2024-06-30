@@ -52,8 +52,8 @@ $$
 
 
 ## Baseline: Without Self-Supervised Learning
-First, we take a look at the baseline model. We'll remove the projection head from the SimCLR model and slap on a linear layer to finetune for a simple classification task. No self-supervised learning is done beforehand, and all weights in the model are trained.
+* First, we take a look at the baseline model. We'll remove the projection head from the SimCLR model and slap on a linear layer to finetune for a simple classification task. No self-supervised learning is done beforehand, and all weights in the model are trained.
 
 
 ## With Self-Supervised Learning
-See how much improvement we get with self-supervised learning.We pretrain the SimCLR model using the simclr loss we wrote, remove the projection head from the SimCLR model, and use a linear layer to finetune for a simple classification task.
+* See how much improvement we get with self-supervised learning.We pretrain the SimCLR model using the simclr loss we wrote, remove the projection head from the SimCLR model, and use a linear layer to finetune for a simple classification task.
