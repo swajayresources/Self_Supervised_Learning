@@ -15,4 +15,4 @@
 * Recently, [SimCLR](https://arxiv.org/pdf/2002.05709.pdf)  introduces a new architecture which uses contrastive learning to learn good visual representations. Contrastive learning aims to learn similar representations for similar images and different representations for different images. As we will see in this notebook, this simple idea allows us to train a surprisingly good model without using any labels.
 
 * Specifically, for each image in the dataset, SimCLR generates two differently augmented views of that image, called a positive pair. Then, the model is encouraged to generate similar representation vectors for this pair of images. See below for an illustration of the architecture .
-  [!](https://raw.githubusercontent.com/swajayresources/Self_Supervised_Learning/main/project/images/simclr_fig2.png)
+  ![](https://raw.githubusercontent.com/swajayresources/Self_Supervised_Learning/main/project/images/simclr_fig2.png)
