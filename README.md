@@ -28,9 +28,9 @@
 
 * l(i,j)=−logexp(sim(zi,zj)/τ)∑2Nk=11k≠iexp(sim(zi,zk)/τ)
 
-where 1∈{0,1} is an indicator function that outputs 1 if k≠i and 0 otherwise. τ is a temperature parameter that determines how fast the exponentials increase.
+* where 1∈{0,1} is an indicator function that outputs 1 if k≠i and 0 otherwise. τ is a temperature parameter that determines how fast the exponentials increase.
 
-sim(zi,zj)=zi⋅zj||zi||||zj|| is the (normalized) dot product between vectors zi and zj. The higher the similarity between zi and zj, the larger the dot product is, and the larger the numerator becomes. The denominator normalizes the value by summing across zi and all other augmented examples k in the batch. The range of the normalized value is (0,1), where a high score close to 1 corresponds to a high similarity between the positive pair (i,j) and low similarity between i and other augmented examples k in the batch. The negative log then maps the range (0,1) to the loss values (inf,0).
+* sim(zi,zj)=zi⋅zj||zi||||zj|| is the (normalized) dot product between vectors zi and zj. The higher the similarity between zi and zj, the larger the dot product is, and the larger the numerator becomes. The denominator normalizes the value by summing across zi and all other augmented examples k in the batch. The range of the normalized value is (0,1), where a high score close to 1 corresponds to a high similarity between the positive pair (i,j) and low similarity between i and other augmented examples k in the batch. The negative log then maps the range (0,1) to the loss values (inf,0).
 
 * The total loss is computed across all positive pairs (i,j) in the batch. Let z=[z1,z2,...,z2N] include all the augmented examples in the batch, where z1...zN are outputs of the left branch, and zN+1...z2N are outputs of the right branch. Thus, the positive pairs are (zk,zk+N) for ∀k∈[1,N].
 
@@ -40,4 +40,4 @@ L=12N∑k=1N[l(k,k+N)+l(k+N,k)]
 
 * NOTE: this equation is slightly different from the one in the paper. We've rearranged the ordering of the positive pairs in the batch, so the indices are different. The rearrangement makes it easier to implement the code in vectorized form.
 
-We'll walk through the steps of implementing the loss function in vectorized form. Implement the functions sim, simclr_loss_naive in resources/simclr/contrastive_loss.py. Test the code by running the sanity checks below.
+* We'll walk through the steps of implementing the loss function in vectorized form. Implement the functions sim, simclr_loss_naive in resources/simclr/contrastive_loss.py. Test the code by running the sanity checks below.
