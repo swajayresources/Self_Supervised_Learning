@@ -16,3 +16,8 @@
 
 * Specifically, for each image in the dataset, SimCLR generates two differently augmented views of that image, called a positive pair. Then, the model is encouraged to generate similar representation vectors for this pair of images. See below for an illustration of the architecture .
   ![](https://raw.githubusercontent.com/swajayresources/Self_Supervised_Learning/main/project/images/simclr_fig2.png)
+
+
+* Given an image x, SimCLR uses two different data augmentation schemes t and t' to generate the positive pair of images  x~i  and  x~j .  f  is a basic encoder net that extracts representation vectors from the augmented data samples, which yields  hi  and  hj , respectively. Finally, a small neural network projection head  g  maps the representation vectors to the space where the contrastive loss is applied. The goal of the contrastive loss is to maximize agreement between the final vectors  zi=g(hi)  and  zj=g(hj) . We will discuss the contrastive loss in more detail later, and you will get to implement it.
+
+* After training is completed, we throw away the projection head  g  and only use  f  and the representation  h  to perform downstream tasks, such as classification. You will get a chance to finetune a layer on top of a trained SimCLR model for a classification task and compare its performance with a baseline model (without self-supervised learning).
