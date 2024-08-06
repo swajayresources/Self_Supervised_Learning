@@ -29,18 +29,7 @@ def train(model, data_loader, train_optimizer, epoch, epochs, batch_size=32, tem
         x_i, x_j = x_i.to(device), x_j.to(device)
         
         out_left, out_right, loss = None, None, None
-        ##############################################################################
-        # TODO: Start of your code.                                                  #
-        #                                                                            #
-        # Take a look at the model.py file to understand the model's input and output.
-        # Run x_i and x_j through the model to get out_left, out_right.              #
-        # Then compute the loss using simclr_loss_vectorized.                        #
-        ##############################################################################
         
-        
-        ##############################################################################
-        #                               END OF YOUR CODE                             #
-        ##############################################################################
         
         train_optimizer.zero_grad()
         loss.backward()

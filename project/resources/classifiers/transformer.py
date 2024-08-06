@@ -76,27 +76,11 @@ class CaptioningTransformer(nn.Module):
         N, T = captions.shape
         # Create a placeholder, to be overwritten by your code below.
         scores = torch.empty((N, T, self.vocab_size))
-        ############################################################################
-        # TODO: Implement the forward function for CaptionTransformer.             #
-        # A few hints:                                                             #
-        #  1) You first have to embed your caption and add positional              #
-        #     encoding. You then have to project the image features into the same  #
-        #     dimensions.                                                          #
-        #  2) You have to prepare a mask (tgt_mask) for masking out the future     #
-        #     timesteps in captions. torch.tril() function might help in preparing #
-        #     this mask.                                                           #
-        #  3) Finally, apply the decoder features on the text & image embeddings   #
-        #     along with the tgt_mask. Project the output to scores per token      #
-        ############################################################################
-        # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+      
 
         pass
 
-        # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-        ############################################################################
-        #                             END OF YOUR CODE                             #
-        ############################################################################
-
+     
         return scores
 
     def sample(self, features, max_length=30):
